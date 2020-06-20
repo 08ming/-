@@ -1,0 +1,250 @@
+5
+0
+1
+(1)
+1
+0
+1
+printf("\n************************************\n");
+1
+0
+1
+printf("请输入要归约的字符串(以‘#’结束)：");
+1
+0
+1
+scanf("%s",in_c);
+1
+0
+1
+n = 1;
+1
+1
+ﾰUeﾤ
+1
+StackTop = 1;
+1
+0
+1
+Stack[StackTop] = '#';
+1
+0
+1
+Stack[StackTop+1] = '\0';
+1
+1
+ￋ
+1
+lastStack = Stack + 1;
+1
+1
+ﾕ
+1
+InputChar = in_c;
+1
+0
+1
+printf("\n步骤\t栈内字符\t\t优先关系\t当前符号\t剩余输入串\t\t\t移进或归约\n");
+5
+0
+1
+(1)
+9
+0
+1
+(judge(Stack,StackTop,InputChar) == 0)
+0
+0
+0
+0
+1
+0
+1
+printf("\n出错！\n");
+3
+0
+11
+11
+9
+0
+1
+(inOpTable(Stack[StackTop]))
+0
+0
+0
+0
+1
+0
+1
+j = StackTop;
+11
+1
+0
+1
+j = StackTop - 1;
+11
+1
+0
+1
+isRigth = find(inOpTable(Stack[j]),inOpTable(*InputChar));
+9
+1
+ﾂﾜs[j] > SMﾓeW&
+1
+(isRigth == 1)
+0
+0
+0
+0
+6
+0
+1
+(find(inOpTable(Stack[j]),inOpTable(q)) != -1)
+1
+0
+1
+q = Stack[j];
+9
+0
+1
+(inOpTable(Stack[j-1]))
+0
+0
+0
+0
+1
+0
+1
+j--;
+11
+1
+0
+1
+j = j - 2;
+11
+11
+1
+0
+1
+printf("(%d)\t%-24s>\t\t%c\t\t%-32s归约\n",n++,lastStack,*InputChar,InputChar+1);
+1
+0
+1
+StackTop = j + 1;
+1
+0
+1
+Stack[StackTop] = 'N';
+1
+0
+1
+Stack[StackTop+1] = '\0';
+2
+0
+11
+9
+0
+1
+(isRigth == -1)
+0
+0
+0
+0
+1
+0
+1
+printf("(%d)\t%-24s<\t\t%c\t\t",n++,lastStack,*InputChar);
+1
+0
+1
+StackTop++;
+1
+0
+1
+Stack[StackTop] = *InputChar;
+1
+0
+1
+Stack[StackTop+1] = '\0';
+1
+0
+1
+InputChar++;
+1
+0
+1
+printf("%-32s移进\n",InputChar);
+2
+0
+11
+9
+0
+1
+(isRigth == 0)
+0
+0
+0
+0
+9
+0
+1
+(Stack[j] == '#')
+0
+0
+0
+0
+1
+0
+1
+printf("(%d)\t%-24s=\t\t#\t\t\t\t\t\t接受\n",n,lastStack);
+1
+0
+1
+printf("\n归约成功！\n");
+3
+0
+11
+1
+0
+1
+printf("(%d)\t%-24s=\t\t%c\t\t",n++,lastStack,*InputChar);
+1
+0
+1
+StackTop++;
+1
+0
+1
+Stack[StackTop] = *InputChar;
+1
+0
+1
+Stack[StackTop+1] = '\0';
+1
+0
+1
+InputChar++;
+1
+0
+1
+printf("%-32s移进\n",InputChar);
+2
+0
+11
+11
+1
+0
+1
+printf("(%d)\t%-24s无\t\t%c\t\t%-32s\\\n",n++,lastStack,*InputChar,InputChar+1);
+1
+0
+1
+printf("\n错误！\n");
+3
+0
+11
+11
+11
+11
+11
+11

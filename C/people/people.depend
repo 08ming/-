@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1558168196 source:c:\users\lenovo\desktop\c\people\main.cpp
+	<iostream>
+	"people.h"
+	"people.cpp"
+
+1558168158 c:\users\lenovo\desktop\c\people\people.h
+	<iostream>
+
+1558168414 c:\users\lenovo\desktop\c\people\people.cpp
+	"people.h"
+	<iostream>
+	<string.h>
+

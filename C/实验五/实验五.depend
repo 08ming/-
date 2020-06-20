@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1556203168 source:c:\users\lenovo\desktop\c\实验五\main.cpp
+	<iostream>
+	<algorithm>
+	"employee.h"
+	"employee.cpp"
+
+1556202588 c:\users\lenovo\desktop\c\实验五\employee.h
+	<string>
+
+1556202588 c:\users\lenovo\desktop\c\实验五\employee.cpp
+	<iostream>
+	<algorithm>
+	<string>
+	"employee.h"
+

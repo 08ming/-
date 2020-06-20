@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1566994175 source:c:\users\lenovo\desktop\c\汽车信息管理系统\main.cpp
+	<iostream>
+	<windows.h>
+

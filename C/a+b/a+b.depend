@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1556169660 source:c:\users\lenovo\desktop\c\a+b\main.cpp
+	<iostream>
+	<algorithm>
+	"a+b.h"
+	"a+b.cpp"
+
+1556169308 source:c:\users\lenovo\desktop\c\a+b\a+b.cpp
+	<iostream>
+	<algorithm>
+	<string>
+	"a+b.h"
+
+1556200525 c:\users\lenovo\desktop\c\a+b\a+b.h
+	<string>
+
+1556169308 c:\users\lenovo\desktop\c\a+b\a+b.cpp
+	<iostream>
+	<algorithm>
+	<string>
+	"a+b.h"
+

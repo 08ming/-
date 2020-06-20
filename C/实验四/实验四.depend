@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1555163381 source:c:\users\lenovo\desktop\c\实验四\main.cpp
+	<iostream>
+	"client.h"
+	"client.cpp"
+
+1555163381 c:\users\lenovo\desktop\c\实验四\client.h
+
+1555163381 c:\users\lenovo\desktop\c\实验四\client.cpp
+	<iostream>
+	"client.h"
+

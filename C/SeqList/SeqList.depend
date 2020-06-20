@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1571315149 source:c:\users\lenovo\desktop\c\seqlist\main.cpp
+	<iostream>
+	"SeqList.h"
+
+1571313564 c:\users\lenovo\desktop\c\seqlist\seqlist.h
+

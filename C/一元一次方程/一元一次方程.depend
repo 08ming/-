@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1555654767 source:c:\users\lenovo\desktop\c\一元一次方程\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
