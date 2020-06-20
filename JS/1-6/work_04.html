@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	<title></title>
+		
+		<style type="text/css">
+
+		.myclass{
+			border: solid 1px black;
+			padding-left: 80px;
+			background-position: 0% 0%;
+			background-size: 30px auto;
+
+		}
+
+		.BoldFont{
+			font-family: "微软雅黑";
+			font-weight: bold;
+			font-size: 30px;
+			letter-spacing: 3px;
+			width: 493px;
+
+		}
+		.SmallBoldFont{
+			font-family: "微软雅黑";
+			font-weight: bold;
+			font-size: 20px;
+			color: rgba(245,73,76,1.00);
+			padding-left: 259px;
+		}
+		.imgdiv{
+			 vertical-align: -1px;
+		}
+
+		img{
+    height: 30px;
+    width: 50px;
+    background-color: rgba(180,180,180,1.00);
+    margin-top: 20px;
+		}
+
+		.BG{
+			width: 600px;
+			height: 70px;
+			background: linear-gradient(to right,white,rgb(230,239,246))
+		}
+			.photo{
+				float: right;
+				width: 20%;
+			}
+			.text{
+				float: left;
+				width: 80%;
+			}
+			
+			p{
+				text-align: center;
+			}
+
+			.block{
+        width: 600px;
+        display: block;
+        margin:5px 0;
+		padding-top: 20px;
+    }
+		.center{
+				text-align: center;
+		}
+		label {
+				display: inline-block;
+				width: 100px;
+				text-align: right;
+		}
+		input,textarea{
+				vertical-align: top;
+		}
+	    table tr td {
+    padding-right: 124px;
+}
+			.foot{
+				font-family: "华文楷体";
+				font-size: 15px;
+				color: gray;
+			}
+
+
+        </style>
+		
+		<script>
+		function isEmail(mail) {
+			var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+			if (filter.test(mail)) {
+				return true; 
+			} else {
+				return false;
+			} 
+		}
+			
+		function Enlength(str,count){
+			if(str.length < count){
+				return false;
+			}
+			return true;
+		}
+
+		function yanzheng(){
+			var password = document.getElementsByName("password")[0].value;
+			var Enpassword = document.getElementsByName("Enpassword")[0].value;
+			var email = document.getElementsByName("email")[0].value;
+			var tel = document.getElementsByName("tel")[0].value;
+			var ID = document.getElementsByName("ID")[0].value;
+			if(password != Enpassword){
+				alert("两次输入密码不一致，请重新输入！");
+			}
+			if(!isEmail(email)){
+				alert("电子邮箱错误！");
+			}
+			
+			if(!Enlength(tel,11)){
+				alert("手机号码错误！");
+			}
+			
+			if(!Enlength(ID,18)){
+				alert("身份证号错误！");
+			}
+			
+			if(!(/^1[3456789]\d{9}$/.test(tel))){ 
+				alert("手机号码有误，请重填");  
+    		} 
+			
+		}
+		
+	</script>
+	</head>
+	
+	
+	
+	<body>
+		
+	<div class="BG myclass" >
+		<div class="photo"><img src="../../js.jpg" width="100" height="100" alt=""/></div>
+		<div class="text">
+			<div class="BoldFont">中国人发邮件用中国网邮箱</div>
+			<div class="SmallBoldFont">china.com.cn</div>
+		</div>
+	</div>
+		<p>新用户申请（带<font color="RED">*</font>的为必填选项）</p>
+	<!--<form name="myform" action="1.png" onSubmit="" method="get">-->
+	<!--<form>-->
+			<div class="block">
+                <label for="username">用户名 </label>
+                <input type="text" name="username" required><font color="RED">*</font>
+				<label for="username">真实姓名</label>
+                <input type="text" name="truename" required><font color="RED">*</font>
+            </div>
+            <div class="block">
+              <label for="password">密码 </label>
+                <input type="password" name="password" required><font color="RED">*</font>
+				&emsp;&emsp;
+				<lable for="sex">性别</lable>
+				<input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_1">男
+				<input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_0">女
+            </div>
+            <div class="block">
+                <label for="description">确认密码 </label>
+                <input type="password" name="Enpassword" required><font color="RED">*</font>
+				<label>省/市</label>
+				<select>
+				  <option>北京</option>
+				</select>
+            </div>
+			<div class="block">
+                <label for="description">验证码 </label>
+                <input type="text" name="yanzhengma">
+				<label for="description">地 址 </label>
+                <input type="text" name="address">
+            </div>
+			<div class="block">
+                <label for="description">密码提示问题 </label>
+                <input type="text" name="question" required><font color="RED">*</font>
+				<label for="description">邮政编码 </label>
+                <input type="text">
+            </div>
+			<div class="block">
+                <label for="description">问题的答案 </label>
+                <input type="text" name="answer"  required><font color="RED">*</font>
+				<label for="description">生 日 </label>
+                <input type="date" name="birthday">
+            </div>
+			<div class="block">
+                <label for="description">电子邮箱 </label>
+                <input type="text" name="email">
+				<label for="description">身份证号码 </label>
+                <input type="text" name="ID">
+            </div>
+	<div class="block">
+                <label for="description">手机号码 </label>
+                <input type="tel" name="tel">
+				<label for="description">联系电话 </label>
+                <input type="tel">
+    </div>
+            <button type="submit" style="margin-left: 35%" onClick="yanzheng();">提交</button>&emsp;
+			<button type="reset" style="text-align: center">重置</button>
+	<p class="foot"><font face="华文行楷" size="+3">牛图网</font> 版权所有 中国互联网新闻中心</p>
+		<!--</form>-->
+</body>
+	 
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <meta charset="UTF-8" />
+    <title>MODEL PAGE</title>
+    <script type="text/javascript" src="jQueryAssets/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		function test(){
+			$.getJSON("json/docter.json",function(data){
+					alert(data);
+					$.each(data,function(i,item){
+						alert(item.name);
+					});
+				});
+			alert("end");
+		}
+	</script>
+</head>
+<body>
+<input type="button" value="Ajax提交" onclick="test();"/>
+<div id="disp"></div>
+	
+	<script type="text/javascript">
+
+	</script>
+</body>
+</html>

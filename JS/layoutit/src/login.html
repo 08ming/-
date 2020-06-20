@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>登录/注册</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	  <style>hr{border: none;}</style>
+  </head>
+  <body style="background-color:#108B55">
+
+   <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class="text-success">
+				欢迎来到南华大学第一附属医院HIS系统
+			</h3>
+		</div>
+	</div>
+	   <hr><hr><hr><hr>
+	<div class="row">
+		<div class="col-md-4" style="border: solid;border-left-width: 0;border-bottom-width: 0;">
+			<h3>
+				h3. Lorem ipsum dolor sit amet.
+			</h3>
+			<form action="Main.html"  role="form" id = "form1" method="get" onSubmit="return testSubmit();"><!--role="form"-->
+				<div class="form-group">
+					 
+					<label for="exampleInputEmail1">
+						Username
+					</label>
+					<input type="username" class="form-control"  name="username" id="exampleInputEmail1" />
+				</div>
+				<div class="form-group">
+					 
+					<label for="exampleInputPassword1">
+						Password
+					</label>
+					<input type="password" class="form-control" name="password" id="exampleInputPassword1" />
+				</div>
+				<div class="form-group" id="rapidPassword" style="display: none">
+					 
+					<label for="exampleInputPassword1">
+						Rapid Password
+					</label>
+					<input type="password" class="form-control" id="exampleInputPassword2" />
+				</div>
+				<div class="form-group">
+					<p class="help-block">
+						Example block-level help text here.
+					</p>
+				</div>
+				<div class="checkbox">
+					 
+					<label>
+						<input type="checkbox" /> Check me out
+					</label>
+				</div> 
+				<button type="submit" class="btn btn-primary">
+					登录
+				</button>
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				<button type="button" class="btn btn-primary" onClick="regist();">
+					注册
+				</button>
+			</form> 
+		</div>
+		<div class="col-md-8">
+			<img alt="Bootstrap Image Preview" src="image/login.jpg" class="img-thumbnail" />
+		</div>
+	</div>
+</div>
+	<script type="text/javascript">
+		function testSubmit(){
+			var rapidPassword = document.getElementById("rapidPassword");
+			if(rapidPassword.style.display == "none"){
+				var flag = false;
+				var username = $("#exampleInputEmail1").val();
+				var password = $("#exampleInputPassword1").val();
+				$.getJSON("json/userInfo.json",function(data){
+					$.each(data,function(i,item){
+						if(username == item.name){
+							if(password == item.password){
+								alert("登录/注册成功!");
+								flag = true;
+								window.location.href="Main.html";
+								return true;
+							}else{
+								alert("注册失败");
+								flag = false;
+								return false;
+							}
+						}
+					});
+					return false;
+				});
+				
+				return flag;
+			}else{
+				var username = $("#exampleInputEmail1").val();
+				var password = $("#exampleInputPassword1").val();
+				var rapidPassword = $("#exampleInputPassword2").val();
+				if(password != rapidPassword){
+					alert("两次输入密码不正确");
+					return false;
+				}else{
+					alert("登录/注册成功!");
+					return true;
+				}
+			}
+		}; 
+		function regist(){
+			var d = document.getElementById("rapidPassword");
+			d.style.display="";
+		}
+		function validate(){
+			var rapidPassword = document.getElementById("rapidPassword");
+			if(rapidPassword.style.display == "none"){
+				 signIn();
+			}else{
+				 register();
+			}
+		};
+		function json(username,password){
+			$.getJSON("json/userInfo.json",function(data){
+				$.each(data,function(i,item){
+					if(username == item.name && password == item.password){
+						alert("登录/注册成功!");
+					}
+				})
+			})
+		};
+		function signIn(){
+			var username = $("#exampleInputEmail1").val();
+			var password = $("#exampleInputPassword1").val();
+			json(username,password);
+		};
+		function register(){
+			var username = $("#exampleInputEmail1").val();
+			var password = $("#exampleInputPassword1").val();
+			var rapidPassword = $("#exampleInputPassword2").val();
+			if(password != rapidPassword){
+				alert("两次输入密码不正确");
+			}else{
+				alert("登录/注册成功!");
+			}
+		};
+	</script>
+	
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
